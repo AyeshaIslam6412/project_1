@@ -1,0 +1,27 @@
+!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Items</title>
+</head>
+<body>
+   <h1>Add Items</h1> 
+   <form action="{% url 'add-items'%}" method="Post"> 
+        {% csrf_token %}
+        <level for="title">title</level></br>
+        <input type="text" id="title" name="title"></br>
+        </br>
+        <level for="description">description</level></br>
+        <input type="tex" id="description" name="description"></br>
+        </br>
+        <button type="submit">submit</button>
+    </form>
+
+
+        <br>
+        {{blog.title}}
+        <br>
+        {{blog.description}}
+</body>
+</html>
