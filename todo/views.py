@@ -14,86 +14,23 @@ def show_items(request):
         result += f'<h1>{blog.title}</h1>'
         result += f'<h2>{blog.author}</h2>'
         result += f'<h3>{blog.content}</h3>'
+        result += f'<h3>{blog.description}</h3>'
     return HttpResponse(result)
 
 
-
-
-def create(request):
-    if request.method == "POST":
+def index(request):
+    todo_list = Blog.objects.all()
+    print(todo_list)
     
-     title = request.POST.get("title")
-     description = request.POST.get("description")
-    
-     print(title, description)
-     data = Blog (title=title,description=description)
-     data.save()
-    
-     print("data is saved successfully")
-     return redirect("get-all")
+    for q in todo_list:
+        print("title",q.title)
+        print("description",q.description)
+    output = ",".join([q.title for q in todo_list])
+    return HttpResponse(output)
 
-    return render(request,"add_items.html") 
+def about(request):
+    return HttpResponse("this is about page")
 
-
-   
-   
-   
-   
 
 def get_all(request):
-
-    
-    # todo_list = Blog.objects.all()
-    # title = todo_list['title']
-    # description = todo_list['description']
-    
-    # print("efjsdlkfs --- ", title, description)
-    
-    # if todo_list:
-    #     print(todo_list)
-        
-    #     for q in todo_list:
-    #         print("id",q.id)
-    #         print("title",q.title)
-    #         print("description",q.description)
-    #     output = ",".join([q.description for q in todo_list])
-    #     return HttpResponse(output)   
-    # else:
-    #     return HttpResponse(f"Not Evailable data") 
-    
-    
-    def create(request):
-        Blog.objects.create()
-    
-    def update(request,id,title,description):
-         todo = Blog.objects.get(id=id)
-         todo.title = title
-         todo.description = description
-         todo.save()
-         return HttpResponse(f"{id} was deleted successfully") 
-     
-     
-    def update(request):
-        return HttpResponse("this is update page")  
-    
-    return render(request, "add_items.html", {"blog": todo_list})
-        
-    
-    
-def see_all(req):
-    todo_list = Blog.objects.all()
-    return render(request, "add_items.html", {"blog": todo_list})
-    
-"""
-def About(request):
-    return render(request,"about.html")
-
-def get_data_by_id(request,id):
-    print("request",request)
-    todo_list = Blog.objects
-    
-    context = {
-        "items": todo_list,
-    "html_title": "Views Items Page"
-    }
-    return render(request,"about.html",context)"""
+    return HttpResponse("hellow world")
