@@ -13,7 +13,6 @@ def show_items(request):
     for blog in blogs:
         result += f'<h1>{blog.title}</h1>'
         result += f'<h2>{blog.author}</h2>'
-        result += f'<h3>{blog.content}</h3>'
         result += f'<h3>{blog.description}</h3>'
     return HttpResponse(result)
 
@@ -24,8 +23,9 @@ def index(request):
     
     for q in todo_list:
         print("title",q.title)
+        print("author",q.author)
         print("description",q.description)
-    output = ",".join([q.title for q in todo_list])
+    output = ",".join([q.author for q in todo_list])
     return HttpResponse(output)
 
 def about(request):
@@ -33,4 +33,4 @@ def about(request):
 
 
 def get_all(request):
-    return HttpResponse("hellow world")
+    return HttpResponse("")

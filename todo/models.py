@@ -6,7 +6,7 @@ class Blog(models.Model):
     title = models.CharField(max_length= 100)
     author = models.CharField(max_length= 50)
     description = models.TextField(blank=False)
-    create_at = models.DateTimeField(auto_now_add=True)
+    gfdhgjhgffds
     
     def __str__(self):
         return f"{self.title}"
