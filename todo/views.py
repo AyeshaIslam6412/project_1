@@ -18,15 +18,15 @@ def show_items(request):
 
 
 def index(request):
-    todo_list = Blog.objects.all()
+    todo_list = Blog.objects.filter(title="Digital Content").order_by("-crete at")
     print(todo_list)
     
     for q in todo_list:
         print("title",q.title)
         print("author",q.author)
         print("description",q.description)
-    output = ",".join([q.author for q in todo_list])
-    return HttpResponse(output)
+    output = ",".join([q.description for q in todo_list])
+    return HttpResponse("output")
 
 def about(request):
     return HttpResponse("this is about page")

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+</head>
+<body>
+    <h1> Show all Students</h1>
+
+    {% if data %}
+    <ul>
+    {% for students in data %}
+     <table>id :{{students.id}}</table>
+     <table>Name : {{students.Name}}</table>
+     <table>Age : {{students.Age}}</table>
+     <table>Course : {{students.Course}}</table>
+     <table>create_at :{{students.create_at}}</table>
+     <br/>
+    {% endfor %}
+    </ul>
+    {% else %}
+       <h2> No Available Data </h2>
+    {% endif %}
+      
+    
+</body>
+</html>
