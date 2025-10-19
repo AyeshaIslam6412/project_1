@@ -1,11 +1,10 @@
 from django.urls import path
-from .views import home,show_items,create,get_all, see_all
+from .views import home,show_items, index,about,get_all
 
 urlpatterns = [
-   
+    path("index/",index,name="index"),
+    path("about/",about,name="about"),
     path("home/",home,name="home"),
     path("items/",show_items,name="items"),
-    path("add-items/", create, name="add-items"),
-    path("get-all/", get_all, name="get-all"),
-    path("see_all/", see_all, name="see_all"),
+    path("get_all/",get_all,name="get_all"),
 ]
