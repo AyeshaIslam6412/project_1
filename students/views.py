@@ -23,8 +23,9 @@ def add_student(request):
       Name = request.POST.get("Name")
       Age = request.POST.get("Age")
       Course = request.POST.get("Course")
-      
       print(Name,Age,Course)
+      
+      
       data = Student(Name=Name,Age=Age,Course=Course)
       data.save()
       print("data is saved successfully")
