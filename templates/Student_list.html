@@ -7,6 +7,15 @@
 </head>
 <body>
     <h1> Show all Students</h1>
+    {% if messages %}
+    {% for message in messages %}
+
+     
+    <p>{{message}}</p>
+
+
+    {% endfor %}
+    {% endif %}
 
     {% if data %}
     <ul>
@@ -15,6 +24,7 @@
      <table>Name : {{students.Name}}</table>
      <table>Age : {{students.Age}}</table>
      <table>Course : {{students.Course}}</table>
+     <table>image:<br> <img src="{{ students.image.url }}" alt=""></table>
      <table>create_at :{{students.create_at}}</table>
      <br/>
     {% endfor %}
