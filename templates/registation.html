@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} User Registration {% endblock  %}
+
+{% block content %}
+      <h2> RegistrationForm </h2>
+
+     <form action="{% url 'registration' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+       <button type="submit">Click Here</button>
+       </form>
+
+    {% if messages %}
+    {% for message in messages %}
+
+     
+    <p>{{message}}</p>
+
+
+    {% endfor %}
+    {% endif %}
+
+
+
+
+{% endblock %}

@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path ('',include('todo.urls')),
     path('',include('students.urls')),
+    path('auth/',include('authentications.urls')),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
