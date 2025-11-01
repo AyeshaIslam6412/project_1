@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'todo',
     'students',
     'authentications',
+    'rest_framework',
+    'rest_api',
 ]
 
 MIDDLEWARE = [
