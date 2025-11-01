@@ -3,12 +3,35 @@
 {% block title %} User Registration {% endblock  %}
 
 {% block content %}
-      <h2> RegistrationForm </h2>
+      <h2> Registration Form </h2>
 
      <form action="{% url 'registration' %}" method="POST">
         {% csrf_token %}
-        {{ form.as_p}}
-       <button type="submit">Click Here</button>
+        <label for="Username">Username</label>
+        <br>
+        <br>
+        {{ form.username }}
+        <br>
+        <br>
+        <label for="Username">Email</labebl>
+        <br>
+        <br>
+        {{ form.email}}
+        <br>
+        <br>
+        <label for="Username">password</label>
+        <br>
+        <br>
+        {{ form.password1}}
+        <br>
+        <br>
+        <label for="Username">Re-Type Password</label>
+        <br>
+        <br>
+        {{ form.password2}}
+        <br>
+        <br>
+       <button type="submit">submit</button>
        </form>
 
     {% if messages %}

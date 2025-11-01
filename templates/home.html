@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+    { if request user.is_authenticated }
+
+      <h2>Welcome,{{ user.username }} </h2>
+
+     <form action="{% url 'sign-out' %}" method="POST">
+        {% csrf_token %}
+        
+       <button type="submit"
+       style="background-color:Red
+       color: White;  
+       padding:8px 15px;
+       border:none;
+       border-redius:5px;
+       font-size:16px; ">Log-out</button>
+       </form>
+
+    {% else %}
+    <p><a href="{% url 'Log-in' %}">Login here</a> </p>
+    {% endif %}
+
+
+
